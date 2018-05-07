@@ -8,15 +8,25 @@ const flexCenterAlign = {
 };
 
 export default class Index extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            counter: 0
+        };
+        this.onIncr = this.onIncr.bind(this);
+    }
     // Initial Props
     static async getInitialProps () {
         return {
             appTitle: 'Reactyv'
         };
     }
-    // Initial state
-    state = {
-        counter: 0
+    // Event listeners
+    onIncr(e){
+        e.preventDefault();
+        this.setState({
+            counter: this.state.counter + 1
+        });
     }
     // Render
     render() {
@@ -24,6 +34,7 @@ export default class Index extends React.Component {
             <div style={flexCenterAlign}>
                 <p>Hello, <Link href="/about">{this.props.appTitle}</Link>!</p>
                 <strong>{this.state.counter}</strong>
+                <a href="" title="Increment value!" onClick={this.onIncr}>Increment</a>
             </div>
         )
     }
