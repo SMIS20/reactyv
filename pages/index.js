@@ -7,7 +7,20 @@ const flexCenterAlign = {
     justifyContent: 'center'
 };
 
-export default () => <div style={flexCenterAlign}>
-                        <p>Hello, <Link href="/about">Reactyv</Link>!</p>
-                    </div>
+export default class Index extends React.Component {
+    // Initial Props
+    static async getInitialProps () {
+        return {
+            appTitle: 'Reactyv'
+        };
+    }
+    // Render
+    render() {
+        return (
+            <div style={flexCenterAlign}>
+                <p>Hello, <Link href="/about">{this.props.appTitle}</Link>!</p>
+            </div>
+        )
+    }
+}
 
