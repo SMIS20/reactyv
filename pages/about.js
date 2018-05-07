@@ -1,5 +1,8 @@
 import React from 'react'
+import Layout from '../components/Layout'
 
-export default () => <div>
-                        About Reactyv!
-                    </div>
+export default () => (
+    <Layout>
+        <p>About Reactyv!</p>
+    </Layout>
+)

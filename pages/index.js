@@ -1,6 +1,9 @@
-import React from 'react';
-import Link from "next/link";
-import { TimerObservable } from 'rxjs/observable/TimerObservable';
+import React from 'react'
+import Link from "next/link"
+import { TimerObservable } from 'rxjs/observable/TimerObservable'
+
+import Header from '../components/Layout'
+import Layout from '../components/Layout';
 
 const flexCenterAlign = {
     display: 'flex',
@@ -41,11 +44,12 @@ export default class Index extends React.Component {
     // Render
     render() {
         return (
-            <div style={flexCenterAlign}>
-                <p>Hello, <Link href="/about">{this.props.appTitle}</Link>!</p>
+            <Layout>
+                <img src="/static/Reactyv_Logo.png" alt="Reactyv Logo"/>
+                <p>Hello, <Link href="/about"><a title="Open About">{this.props.appTitle}</a></Link>!</p>
                 <strong>{this.state.counter}</strong>
                 <button onClick={this.onIncr}>Count Up!!</button>
-            </div>
+            </Layout>
         )
     }
 }
