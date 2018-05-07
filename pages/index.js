@@ -14,11 +14,16 @@ export default class Index extends React.Component {
             appTitle: 'Reactyv'
         };
     }
+    // Initial state
+    state = {
+        counter: 0
+    }
     // Render
     render() {
         return (
             <div style={flexCenterAlign}>
                 <p>Hello, <Link href="/about">{this.props.appTitle}</Link>!</p>
+                <strong>{this.state.counter}</strong>
             </div>
         )
     }
